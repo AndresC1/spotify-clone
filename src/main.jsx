@@ -1,7 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import 'tailwindcss/tailwind.css'
+import { createHashRouter, RouterProvider } from 'react-router-dom'
+import HomePage from './page/HomePage'
+import './css/main.css'
 
+const rutas = createHashRouter([
+  {
+    path: '/',
+    element: <HomePage/>
+  }
+])
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <h1 className='w-full h-20 bg-[#333] text-[#eee] font-bold text-3xl flex justify-center items-center'>Hola mundo</h1>
+  <RouterProvider router={rutas}>
+  </RouterProvider>
 )
