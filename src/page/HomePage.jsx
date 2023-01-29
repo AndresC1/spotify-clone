@@ -10,8 +10,8 @@ export default function HomePage() {
         <Nabvar/>
         <div className='w-full'>
           <Outlet/>
+          <Reproductor/>
         </div>
-        <Reproductor/>
     </div>
   )
 }
