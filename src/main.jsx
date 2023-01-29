@@ -8,7 +8,21 @@ import './css/main.css'
 const rutas = createHashRouter([
   {
     path: '/',
-    element: <HomePage/>
+    element: <HomePage/>,
+    children: [
+      {
+        path: '/',
+        element: <h1 className='text-white'>Inicio</h1>
+      },
+      {
+        path: '/buscar',
+        element: <h1 className='text-white'>Buscar</h1>
+      },
+      {
+        path: '/biblioteca',
+        element: <h1 className='text-white'>biblioteca</h1>
+      }
+    ]
   }
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
