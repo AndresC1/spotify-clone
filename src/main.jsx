@@ -4,6 +4,7 @@ import 'tailwindcss/tailwind.css'
 import { createHashRouter, RouterProvider } from 'react-router-dom'
 import HomePage from './page/HomePage'
 import './css/main.css'
+import { ContextDataProvider } from './context/ContextData'
 
 const rutas = createHashRouter([
   {
@@ -26,6 +27,7 @@ const rutas = createHashRouter([
   }
 ])
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <RouterProvider router={rutas}>
-  </RouterProvider>
+  <ContextDataProvider>
+    <RouterProvider router={rutas}/>
+  </ContextDataProvider>
 )
