@@ -7,7 +7,7 @@ import useContextApp from '../../hooks/useContextApp';
 export default function Reproductor() {
     const contexto = useContextApp()
     return (
-    <div className='w-full lg:z-50 lg:h-auto lg:pb-5 h-32 bg-[#111] fixed lg:bottom-0 bottom-14 right-0 lg:border-[#222] lg:border-t-[1px] lg:rounded-none rounded-t-3xl'>
+    <div className='w-full lg:z-50 lg:h-auto lg:pb-5 h-32 bg-[#111] fixed lg:bottom-0 bottom-14 right-0 border-[#222] lg:border-t-[1px] border-[1px] lg:rounded-none rounded-t-3xl'>
         <div className='w-full flex justify-between items-center'>
             <section className='text-[#eee] font-semibold flex justify-start items-start min-w-[2em] w-full mr-3'>
                 <img src={prueba} alt="Legendary" className='w-16 h-16 mt-5 ml-5 rounded-md' />
