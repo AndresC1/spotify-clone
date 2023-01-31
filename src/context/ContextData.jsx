@@ -1,9 +1,17 @@
 import React, { useRef, useState, useEffect } from 'react'
 import enlaces from '../data/rutas';
+import { allGeneros } from '../API/Generos';
+import { allAlbumes } from '../API/Albumes';
+import { allArtistas } from '../API/Artistas';
 
 const contextDataApp = React.createContext()
 
 function ContextDataProvider({children}) {
+
+  const [ListGeneros, setListGeneros] = useState([])
+  const [ListArtistas, setListArtistas] = useState([])
+  const [ListAlbumes, setListAlbumes] = useState([])
+
   //  Ref Reproductor de musica
   const contenedor = useRef(null);
   const content_artist = useRef(null);
@@ -23,12 +31,21 @@ function ContextDataProvider({children}) {
     : content_song.current.classList.remove('animate-scroll-content')
   }, [TamWindow]);  
 
+  useEffect(()=>{
+    allGeneros().then(data => setListGeneros(data))
+    allAlbumes().then(data => setListAlbumes(data))
+    allArtistas().then(data => setListArtistas(data))
+  }, [])
+
   return (
     <contextDataApp.Provider value={{
       contenedor,
       content_artist,
       content_song,
-      enlaces
+      enlaces,
+      ListGeneros,
+      ListAlbumes,
+      ListArtistas
     }}>
       {children}
     </contextDataApp.Provider>
