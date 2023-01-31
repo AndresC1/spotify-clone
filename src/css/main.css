@@ -1,4 +1,7 @@
 body{
-    background-color: #2B2B2B;
+    background-color: #121212;
     scroll-behavior: smooth;
+}
+.data_container::-webkit-scrollbar{
+    display: none;
 }
